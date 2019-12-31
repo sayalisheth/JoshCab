@@ -1,0 +1,13 @@
+%h1 Add New Ride Request Here
+
+= form_with model: @ride_ride_request do |f|
+  = label_tag(:destination, "Destination:") 
+  %br
+  = f.text_field(:destination) 
+  %br
+  = label_tag(:user_id, "User_id:") 
+  %br
+  = f.text_field(:user_id) 
+  %br
+  %br
+  =f.submit "create"

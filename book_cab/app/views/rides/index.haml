@@ -1,0 +1,29 @@
+:css
+  td,th{padding: 15px; 
+      font-size: 25px;
+    }
+  h1{color: green;
+    font-size: 50px;
+  }
+%h1{:align => "center"} Available Rides
+%table{:align => "center", :border => "2"}
+  %tr{:bgcolor => "blue"}
+    %th ID
+    %th DATE
+    %th TIME
+    %th LOCATION
+    %th DRIVER NAME
+    %th REQUEST COUNT
+    %th ACTION
+  - ride=@all
+  - for r in ride do
+    %tr
+      %td= r.id
+      %td= r.date
+      %td= r.time
+      %td= r.location
+      %td= r.driver.first_name
+      %td= r.ride_requests.count
+      %td= link_to "View Request", ride_ride_requests_path(r)
+%h2
+  To add new ride #{link_to "click here", new_ride_path}

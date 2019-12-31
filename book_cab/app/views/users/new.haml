@@ -1,0 +1,22 @@
+%center
+  %h1 Add New User
+
+  = form_with model: @user do |f|{:background_color=>"blue" }
+    = label_tag(:first_name, "First Name:") 
+    %br
+    = f.text_field(:first_name) 
+    %br
+    =label_tag(:last_name, "Last Name:") 
+    %br
+    = f.text_field(:last_name) 
+    %br
+    =label_tag(:email_id, "Email:") 
+    %br
+    = f.text_field(:email_id) 
+    %br
+    =label_tag(:contact_no, "Contact No:") 
+    %br
+    = f.text_field(:contact_no) 
+    %br
+    %br
+    =f.submit "create"

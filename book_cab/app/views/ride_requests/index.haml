@@ -1,0 +1,21 @@
+:css
+  td,th{padding: 15px; 
+      font-size: 25px;
+    }
+  h1{color: green;
+    font-size: 50px;
+  }
+%h1{:align => "center"} Ride Requests
+%table{:align => "center", :border => "2"}
+  %tr{:bgcolor => "blue"}
+    %th Name
+    %th Destination
+    %th status
+  - @request.each do |r|
+    %tr
+      %td= r.user.first_name
+      %td= r.destination
+      %td= r.status
+
+%h2
+  To add new ride request #{link_to "click here", new_ride_ride_request_path}

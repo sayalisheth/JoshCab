@@ -1,0 +1,27 @@
+:css
+  td,th{padding: 15px; 
+      font-size: 25px;
+    }
+  h1{color: green;
+    font-size: 50px;
+  }
+%h1{:align => "center"} All Users
+%table{:align => "center", :border => "2"}
+  %tr{:bgcolor => "blue"}
+    %th ID
+    %th First Name
+    %th Last Name
+    %th Email
+    %th Contact No.
+    
+  - user=@all
+  - for u in user do
+    %tr
+      %td= u.id
+      %td= u.first_name
+      %td= u.last_name
+      %td= u.email_id
+      %td= u.contact_no
+    
+%h2
+  To add new user #{link_to "click here", new_user_path}
